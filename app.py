@@ -66,8 +66,8 @@ def restore_session():
 
     try:
         response = supabase.auth.set_session(
-            st.session_state.refresh_token,
-            st.session_state.access_token
+            st.session_state.access_token,
+            st.session_state.refresh_token
         )
 
         user = response.user
@@ -392,12 +392,7 @@ def authentication_page():
                             )
 
                     except Exception as e:
-    st.error(f"Registration error: {e}")
-                        st.error(
-                            "Registration failed. The email may "
-                            "already be registered, or the password "
-                            "may not meet the authentication requirements."
-                        )
+                        st.error(f"Registration error: {e}")
 
     st.divider()
 
