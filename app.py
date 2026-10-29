@@ -391,7 +391,8 @@ def authentication_page():
                                 "inbox before logging in."
                             )
 
-                    except Exception:
+                    except Exception as e:
+    st.error(f"Registration error: {e}")
                         st.error(
                             "Registration failed. The email may "
                             "already be registered, or the password "
